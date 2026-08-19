@@ -1,6 +1,71 @@
-@BeautySalon.Api_HostAddress = http://localhost:5162
+@HostAddress = http://localhost:5162
 
-GET {{BeautySalon.Api_HostAddress}}/weatherforecast/
+GET {{HostAddress}}/api/customers
 Accept: application/json
 
 ###
+
+POST {{HostAddress}}/api/customers
+Content-Type: application/json
+
+{
+  "fullName": "Saron",
+  "phone": "0912345678",
+  "email": "saron@example.com"
+}
+###
+
+### Get all services
+GET {{HostAddress}}/api/services
+Accept: application/json
+
+###
+
+### Create a service
+POST {{HostAddress}}/api/services
+Content-Type: application/json
+
+{
+  "name": "Haircut",
+  "price": 300,
+  "durationMinutes": 45,
+  "category": "Hair"
+}
+###
+
+### Get all staff
+GET {{HostAddress}}/api/staff
+Accept: application/json
+
+###
+
+### Create staff
+POST {{HostAddress}}/api/staff
+Content-Type: application/json
+
+{
+  "fullName": "Meron",
+  "role": "Hair Stylist",
+  "phone": "0922334455"
+}
+
+###
+
+### Get appointments
+GET {{HostAddress}}/api/appointments
+Accept: application/json
+
+###
+
+### Create appointment
+###
+POST {{HostAddress}}/api/appointments
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "staffId": 1,
+  "appointmentDate": "2026-08-20T10:00:00Z",
+  "status": "Scheduled",
+  "notes": "First appointment"
+}

@@ -14,10 +14,9 @@ public class Appointment
 
     public string? Notes { get; set; }
 
-    public Customer Customer { get; set; } = null!;
+   public Customer? Customer { get; set; }
 
-    public Staff Staff { get; set; } = null!;
-
+public Staff? Staff { get; set; }
     public ICollection<AppointmentService> AppointmentServices { get; set; }
         = new List<AppointmentService>();
 
