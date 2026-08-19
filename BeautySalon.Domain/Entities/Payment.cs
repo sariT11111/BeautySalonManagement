@@ -14,5 +14,5 @@ public class Payment
 
     public string Status { get; set; } = "Pending";
 
-    public Appointment Appointment { get; set; } = null!;
+    public Appointment? Appointment { get; set; } 
 }

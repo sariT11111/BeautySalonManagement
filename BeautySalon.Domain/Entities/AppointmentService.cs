@@ -8,7 +8,7 @@ public class AppointmentService
 
     public decimal Price { get; set; }
 
-    public Appointment Appointment { get; set; } = null!;
+    public Appointment? Appointment { get; set; }
 
-    public Service Service { get; set; } = null!;
+public Service? Service { get; set; }
 }

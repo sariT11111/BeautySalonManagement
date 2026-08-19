@@ -69,3 +69,62 @@ Content-Type: application/json
   "status": "Scheduled",
   "notes": "First appointment"
 }
+###
+
+### Get appointment services
+GET {{HostAddress}}/api/appointmentservices
+Accept: application/json
+
+###
+
+### Add Haircut to Saron's appointment
+POST {{HostAddress}}/api/appointmentservices
+Content-Type: application/json
+
+{
+  "appointmentId": 1,
+  "serviceId": 2,
+  "price": 500
+}
+
+### Create Service
+POST {{HostAddress}}/api/services
+Content-Type: application/json
+
+{
+  "name": "Haircut",
+  "price": 500,
+  "durationMinutes": 60,
+  "category": "Hair"
+}
+### Create Payment
+POST {{HostAddress}}/api/payments
+Content-Type: application/json
+
+{
+  "appointmentId": 1,
+  "amount": 800,
+  "paymentDate": "2026-08-20T11:00:00Z",
+  "method": "Cash",
+  "status": "Paid"
+}
+### Get Payments
+GET {{HostAddress}}/api/payments
+Accept: application/json
+### Update Payment
+PUT {{HostAddress}}/api/payments/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "appointmentId": 1,
+  "amount": 900,
+  "paymentDate": "2026-08-20T11:00:00Z",
+  "method": "Cash",
+  "status": "Paid"
+}
+
+###
+
+### Delete Payment
+DELETE {{HostAddress}}/api/payments/1
